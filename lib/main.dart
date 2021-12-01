@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,6 +27,17 @@ class MyApp extends StatelessWidget {
             print('Clicked');
           },
         ),
+        bottomNavigationBar: ConvexAppBar(
+          backgroundColor: Colors.deepOrange,
+          activeColor: Colors.yellowAccent,
+          items: [
+            TabItem(icon: Icons.home, title: 'Home'),
+            TabItem(icon: Icons.map, title: 'Discovery'),
+            TabItem(icon: Icons.add, title: 'Add'),
+          ],
+          initialActiveIndex: 2,//optional, default as 0
+          onTap: (int i) => print('click index=$i'),
+        )
       ),
     );
   }
